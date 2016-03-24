@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import Parent from './components/Parent.js';
 
 export default class App extends Component {
   render() {
     return (
-      <h1>Hello, world.</h1>
+      <div>
+        <h1>Hello React JS programm.</h1>
+        <Parent />
+      </div>
     );
   }
 }
