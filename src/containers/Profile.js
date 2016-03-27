@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Avatar, Link, Name } from '../components/Profile';
-// import Link from '../components/Link';
-// import Name from '../components/Name';
+import { Avatar, ProfileLink, Name } from '../components/Profile';
 
 class Profile extends Component {
   constructor(props) {
@@ -16,9 +14,10 @@ class Profile extends Component {
   render() {
     return (
       <div>
+        <p>Welcome to Profile.</p>
         <Avatar src={this.state.image} />
         <Name>{this.state.username}</Name>
-        <Link username={this.state.username}>{this.state.username}</Link>
+        <ProfileLink username={this.state.username}>{this.state.username}</ProfileLink>
       </div>
     );
   }

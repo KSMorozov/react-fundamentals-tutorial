@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
-import Profile from './containers/Profile';
+import React from 'react';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Hello React JS programm.</h1>
-        <Profile />
-      </div>
-    );
-  }
-}
+const App = ({ children }) =>
+  <div className="container main-container">
+    <h1>Github Battle</h1>
+    {children}
+  </div>
+
+export default App;
