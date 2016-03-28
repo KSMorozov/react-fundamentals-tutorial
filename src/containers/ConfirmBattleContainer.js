@@ -9,6 +9,16 @@ class ConfirmBattleContainer extends Component {
       isLoading: true,
       playersInfo: [],
     };
+    this.handleInitiateBattle = this.handleInitiateBattle.bind(this);
+  }
+
+  handleInitiateBattle() {
+    this.context.router.push({
+      pathname: '/results',
+      state: {
+        playersInfo: this.state.playersInfo,
+      },
+    });
   }
 
   componentDidMount() {
@@ -19,7 +29,10 @@ class ConfirmBattleContainer extends Component {
 
   render() {
     return (
-      <ConfirmBattle {...this.state} />
+      <ConfirmBattle
+        onInitiateBattle={this.handleInitiateBattle}
+        {...this.state}
+      />
     );
   }
 }
