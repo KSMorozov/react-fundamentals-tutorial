@@ -13,11 +13,19 @@ class ResultsContainer extends Component {
 
   componentDidMount() {
     battle(this.props.location.state.playersInfo)
-      .then(scores => this.setState({ scores, isLoading: false }));
+      .then(function (scores) {
+        this.setState({ scores: scores, isLoading: false });
+      }.bind(this));
   }
 
   render() {
-    return <Results {...this.props.location.state} {...this.state}  />
+    return (
+      <Results
+        isLoading={this.state.isLoading}
+        playersInfo={this.props.location.state.playersInfo}
+        scores={this.state.scores}
+      />
+    );
   }
 }
 

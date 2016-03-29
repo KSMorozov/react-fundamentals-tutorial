@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 import { transparent } from '../styles/styles';
+import MainContainer from './MainContainer';
 
 const Prompt = ({ ...props }) =>
-  <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" {...transparent}>
+  <MainContainer>
     <h1>{props.header}</h1>
     <div className="col-sm-12">
       <form onSubmit={props.onSubmitUser}>
@@ -15,7 +16,7 @@ const Prompt = ({ ...props }) =>
             type="text"
           />
         </div>
-        <div className="form-group col-sm-4 col-sm-offset-4">
+        <div className="form-group col-sm-8 col-sm-offset-2">
           <button
             className="btn btn-block btn-success"
             type="submit"
@@ -25,7 +26,7 @@ const Prompt = ({ ...props }) =>
         </div>
       </form>
     </div>
-  </div>;
+  </MainContainer>;
 
 Prompt.propTypes = {
   onSubmitUser: PropTypes.func.isRequired,

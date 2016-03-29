@@ -1,17 +1,17 @@
 import React, { PropTypes } from 'react';
 
-const UserDetails = ({ user }) =>
+const UserDetails = (props) =>
   <div>
-    {!!user.score && <li className="list-group-item"><h3>Score {user.score}</h3></li>}
-    <li className="list-group-item"><img src={user.avatar_url} className="img-rounded img-responsive" /></li>
-    {user.name && <li className="list-group-item">Name: {user.name}</li>}
-    <li className="list-group-item">Username: {user.login}</li>
-    {user.location && <li className="list-group-item">Location: {user.location}</li>}
-    {user.company && <li className="list-group-item">Company: {user.company}</li>}
-    <li className="list-group-item">Followers: {user.followers}</li>
-    <li className="list-group-item">Following: {user.followers}</li>
-    <li className="list-group-item">Public Repos: {user.public_repos}</li>
-    {user.blog && <li className="list-group-item">Blog: <a href={user.blog}>{user.blog}</a></li>}
+    {!!props.score && <li className="list-group-item"><h3>Score {props.score}</h3></li>}
+    <li className="list-group-item"><img src={props.info.avatar_url} className="img-rounded img-responsive" /></li>
+    {props.info.name && <li className="list-group-item">Name: {props.info.name}</li>}
+    <li className="list-group-item">Username: {props.info.login}</li>
+    {props.info.location && <li className="list-group-item">Location: {props.info.location}</li>}
+    {props.info.company && <li className="list-group-item">Company: {props.info.company}</li>}
+    <li className="list-group-item">Followers: {props.info.followers}</li>
+    <li className="list-group-item">Following: {props.info.followers}</li>
+    <li className="list-group-item">Public Repos: {props.info.public_repos}</li>
+    {props.info.blog && <li className="list-group-item">Blog: <a href={props.info.blog}>{props.info.blog}</a></li>}
   </div>;
 
 UserDetails.propTypes = {
